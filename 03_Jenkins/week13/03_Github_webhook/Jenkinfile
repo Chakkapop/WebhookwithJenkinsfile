@@ -46,10 +46,10 @@ pipeline {
             steps {
                 script {
                     // Remove Docker images and containers
-                    sh 'docker stop $(docker ps -a -q) || true'  
-                    sh  'docker rm $(docker ps -a -q) || true' 
-                    sh  'docker rmi $(docker images -q) || true'
-                    sh 'docker system prune -af'
+                    sh 'sudo docker stop $(docker ps -a -q) || true'  
+                    sh  'sudo docker rm $(docker ps -a -q) || true' 
+                    sh  'sudo docker rmi $(docker images -q) || true'
+                    sh 'sudo docker system prune -af'
                 }
             }
         }
